@@ -1,9 +1,8 @@
 
 * 1.环境搭建
-* 2.创建工程及工程目录介绍
-* 3.dart代码
+* 2.dart代码
+* 3.创建工程及工程目录介绍
 * 4.Flutter基础widget
-* 5.Native通信与插件开发
 
 ##1.环境搭建
 > * Flutter SDK
@@ -134,11 +133,13 @@ zsh的在～/.zshrc上添加如下环境变量:
 4. 点击 View > Command Palette…，或者快捷键 Shift+cmd+P。输入 Flutter ![macdown图标](./image/vscode2.png)
 
 
+##2.dart语法
+
+[http://dart.goodev.org/guides/language/language-tour](http://dart.goodev.org/guides/language/language-tour)
 
 
 
-
-##2.创建工程及工程目录介绍
+##3.创建工程及工程目录介绍
 
 ###flutter工程类型介绍
 
@@ -258,12 +259,10 @@ publish_to      	   | 指定发布包的位置，默认是 Pub |可选    |
 flutter         	   | flutter 资源相关的配置，包括图片、字体等 |必选   |
 
 
-##dart语法
-
-[http://dart.goodev.org/guides/language/language-tour](http://dart.goodev.org/guides/language/language-tour)
 
 
-##Widget介绍
+
+##4. Widget介绍
 
 Flutter中的Widget相当于Android里的View，iOS里的UIView。Flutter通过Widget渲染页面，但不仅于此。
 除了 UI、布局之外，还有交互、动画等。
@@ -341,7 +340,7 @@ persistentFooterButtons 	| 固定在下方显示的按钮，比如对话框下�
 
 ###StatefulWidget
 
-StatefulWidget可以根据state的状态来改变UI显示（见[**statefulwidget_demo**]()）
+StatefulWidget可以根据state的状态来改变UI显示（见[**statefulwidget_demo**](https://github.com/wanglei8909/FlutterDemo)）
 
 		class MyApp extends StatefulWidget {
   		// This widget is the root of your application.
@@ -392,7 +391,7 @@ mounted 是 bool 类型，表示当前 State 是否加载到树里。State 对�
 
 setState() 只有在 mounted 为 true 的时候才能用，当 moundted 为 false 时调用会抛异常。
 
-###StatefulWidget 的生命周期 （见[**statefulwidget_demo**]()）
+###StatefulWidget 的生命周期 （见[**statefulwidget_demo**](https://github.com/wanglei8909/FlutterDemo)）
 
 StatefulWidget 由 StatefulWidget 和 State 两部分组成，所以也有 StatefulWidget 的生命周期和 State 生命周期。
 
@@ -462,7 +461,7 @@ StatefulWidget 由 StatefulWidget 和 State 两部分组成，所以也有 State
 StatelessWidget 是没有 State（状态）的 Widget，当 Widget 在运行时不需要改变时，就用 StatelessWidget。
 
 
-####StatelessWidget 的实现（见[**statelesswidget_demo**]()）
+####StatelessWidget 的实现（见[**statelesswidget_demo**](https://github.com/wanglei8909/FlutterDemo)）
 
 	class StatelessDemo extends StatelessWidget {
 
@@ -482,7 +481,7 @@ StatelessWidget 是没有 State（状态）的 Widget，当 Widget 在运行时�
 如果你想要为 StatelessWidget 赋值，只能在 StatelessWidget 初始化的时候，通过构造函数传递一些额外的参数。但是请记住，这些参数不会在以后阶段发生变化，即使发生变化，也只能按原值使用。因为 StatelessWidget 只会渲染一次。
 
 
-当StatefulWidget包含StatelessWidget的子节点时（见[**statelesswidget_demo**]()），StatelessWidget使用了父节点的state状态来显示，当父节点调用setState，会引起子节点的重建。
+当StatefulWidget包含StatelessWidget的子节点时（见[**statelesswidget_demo**](https://github.com/wanglei8909/FlutterDemo)），StatelessWidget使用了父节点的state状态来显示，当父节点调用setState，会引起子节点的重建。
 
 
 StatefulWidget和StatelessWidget 的区别归纳为能不能发生变化不太恰当。应该归纳为有没有管理状态的能力。
@@ -492,7 +491,7 @@ StatefulWidget和StatelessWidget 的区别归纳为能不能发生变化不太�
 
 官方提供的widgets有上百个，我们介绍一些基础的常用的，通过对这些常用的widget的了解，熟悉widget的使用方法和代码风格，基本可以完成页面的布局。然后其他的widget到用的时候可以自己查看与理解。
 
-###Text文本（见[**text_demo**]()）
+###Text文本（见[**text_demo**](https://github.com/wanglei8909/FlutterDemo)）
 
 		Text(
             '大家好 hello flutter hello flutter hello flutter hello flutter hello flutter',
@@ -537,7 +536,7 @@ StatefulWidget和StatelessWidget 的区别归纳为能不能发生变化不太�
           )
 
 
-###RichText（见[**text_demo**]()）
+###RichText（见[**text_demo**](https://github.com/wanglei8909/FlutterDemo)）
 
 			RichText(
               text: TextSpan(
@@ -560,7 +559,7 @@ StatefulWidget和StatelessWidget 的区别归纳为能不能发生变化不太�
               ),
             )
 
-###image （见[**image_demo**]()）
+###image （见[**image_demo**](https://github.com/wanglei8909/FlutterDemo)）
 
 #####使用本地图片资源
 1.  创建一个存储images的目录
@@ -664,7 +663,7 @@ filterQuality	|FilterQuality	|设置图片的过滤质量
 
 单节点的子节点属性是child；多节点的子节点的属性是children。
 
-###Container详解
+###Container详解（见[**container_demo**](https://github.com/wanglei8909/FlutterDemo)）
 
 Flutter中最常见的布局widget。官方给出的简介，是一个结合了绘制（painting）、定位（positioning）以及尺寸（sizing）widget的widget。
 
@@ -744,7 +743,7 @@ margin | 围绕在decoration和child之外的空白区域，不属于内容区�
 transform | 设置container的变换矩阵，类型为Matrix4。
 child | container中的内容widget。 
 
-####例子（见[**layout_demo**]()）
+####例子（见[**layout_demo**](https://github.com/wanglei8909/FlutterDemo)）
 
 	Container(
         constraints: new BoxConstraints.expand(
@@ -768,7 +767,7 @@ child | container中的内容widget。
 
 ![macdown图标](./image/vs8.png)
 
-###Padding详解（见[**layout_demo**]()）
+###Padding详解（见[**layout_demo**](https://github.com/wanglei8909/FlutterDemo)）
 
 单节点控件，功能是 给子节点设置padding属性。
 
@@ -809,7 +808,7 @@ Padding的布局分为两种情况：
 Center继承自Align，只不过是将alignment设置为Alignment.center
 
 
-###AspectRatio（见[**layout_demo**]()）
+###AspectRatio（见[**layout_demo**](https://github.com/wanglei8909/FlutterDemo)）
 
 AspectRatio的作用是调整child到设置的宽高比
 
@@ -831,7 +830,7 @@ AspectRatio的作用是调整child到设置的宽高比
 	
 子控件会按照设置的宽高比显示大小
 
-###ConstrainedBox（见[**layout_demo**]()）
+###ConstrainedBox（见[**layout_demo**](https://github.com/wanglei8909/FlutterDemo)）
 
 这个控件的作用是添加额外的限制条件（constraints）到child上
 
@@ -853,7 +852,7 @@ AspectRatio的作用是调整child到设置的宽高比
 
 在一个宽高为20的Container上加上 minWidth，minHeight为100的ConstrainedBox，这个Container的实际宽高是100。
 
-###Offstage（见[**layout_demo**]()）
+###Offstage（见[**layout_demo**](https://github.com/wanglei8909/FlutterDemo)）
 
 Offstage的作用很简单，通过一个参数，来控制child是否显示，日常使用中也算是比较常用的控件。
 
@@ -866,7 +865,7 @@ Offstage的作用很简单，通过一个参数，来控制child是否显示，�
 另外，当Offstage不可见的时候，如果child有动画，应该手动停掉，Offstage并不会停掉动画。
 
 
-#####示例代码（见[**layout_demo**]()）
+#####示例代码（见[**layout_demo**](https://github.com/wanglei8909/FlutterDemo)）
 
 	Column(
 	  children: <Widget>[
@@ -915,7 +914,7 @@ Offstage的作用很简单，通过一个参数，来控制child是否显示，�
 这个控件，很多场景可以使用。但是，可以替代它的控件也有不少，例如Container、ConstrainedBox等。而且SizedBox就是ConstrainedBox的一个特例。
 
 
-###Row 与 Column（见[**layout_demo**]()）
+###Row 与 Column（见[**layout_demo**](https://github.com/wanglei8909/FlutterDemo)）
 
 在Flutter中非常常见的一个多子节点控件，将children排列成一行。估计是借鉴了Web中Flex布局，所以很多属性和表现，都跟其相似。但是注意一点，自身不带滚动属性，如果超出了一行，在debug下面则会显示溢出的提示。
 
@@ -1052,7 +1051,7 @@ top对应Row以及Column的话，就是左边和顶部，bottom的话，则是�
 
 
 
-###Stack（见[**layout_demo**]()）
+###Stack（见[**layout_demo**](https://github.com/wanglei8909/FlutterDemo)）
 
 Stack的场景还是比较多的，对于需要叠加显示的布局，一般都可以使用Stack。有些场景下，也可以被其他控件替代，我们应该选择开销较小的控件去实现。
 
@@ -1089,7 +1088,7 @@ Stack的布局行为，根据child是positioned还是non-positioned来区分。
 	  ],
 	);
 
-###IndexedStack（见[**layout_demo**]()）
+###IndexedStack（见[**layout_demo**](https://github.com/wanglei8909/FlutterDemo)）
 
 IndexedStack继承自Stack，它的作用是显示第index个child，其他child都是不可见的。所以IndexedStack的尺寸永远是跟最大的子节点尺寸一致。
 
@@ -1124,7 +1123,7 @@ IndexedStack继承自Stack，它的作用是显示第index个child，其他child
 通过index控制第几个child显示，index设置为1，头像隐藏，只显示了名字。
 
 
-###ListView（见[**layout_demo**]()）
+###ListView（见[**layout_demo**](https://github.com/wanglei8909/FlutterDemo)）
 
 ListView在移动端上非常的常见，就是一个滚动的列表。类似iOS的TableView
 
@@ -1155,7 +1154,7 @@ children |  容纳子元素的组件数组。
 	  List<Widget> children = const <Widget>[],
 	})
 	
-同时也提供了如下额外的三种构造方法:（三种例子见[**layout_demo**]()）
+同时也提供了如下额外的三种构造方法:（三种例子见[**layout_demo**](https://github.com/wanglei8909/FlutterDemo)）
 
 	ListView.builder
 	ListView.separated
@@ -1167,7 +1166,7 @@ ListView.builder 与 ListView.separated的区别只在于分割线，分割线�
 
 
 
-###GridView（见[**layout_demo**]()）
+###GridView（见[**layout_demo**](https://github.com/wanglei8909/FlutterDemo)）
 
 GridView在移动端上非常的常见，就是一个滚动的多列列表。类似iOS的UICollectionView
 
@@ -1232,12 +1231,37 @@ GridView的构造方法有GridView，GridView.builder，GridView.count，GridVie
 4. GridView.extent构造函数式GridView使用SliverGridDelegateWithMaxCrossAxisExtent的简写，效果完全一致。
 
 
+###路由
+
+flutter路由跳转有两种方式：
+####1.命名路由
+
+	MaterialApp(
+      title: 'Route Demo',
+      routes: {
+        '/' : (BuildContext context)=> new FirstPage(),
+        '/secondPage' : (BuildContext context)=> new SecondPage(),
+      },
+      // home: FirstPage(),
+    );
+
+在需要做路由跳转的时候直接使用：
+
+	Navigator.pushNamed(context, "secondPage");
 
 
+####2.构建路由
+
+在需要做路由跳转的时候直接使用：
+	
+	Navigator.push(context, new MaterialPageRoute(builder: (BuildContext context){
+	  return new SecondPage();
+	}))
+
+区别：
+
+1. 命名路由简明并且系统，但是不能传参。
+2. 构建路由可以传参，但比较繁琐
 
 
-
-
-
-
-
+具体使用见[**route_demo**](https://github.com/wanglei8909/FlutterDemo)；
